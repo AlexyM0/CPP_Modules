@@ -6,14 +6,17 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 18:28:00 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/09 03:34:45 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/10 02:30:22 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
-class Contact	{
+#include <iostream>
+
+class Contact	
+{
 
 private:
 	std::string _first_name;
@@ -24,6 +27,8 @@ private:
 
 public:
 
+    Contact();
+    ~Contact();
  	void setFirstName(const std::string& first_name);
     void setLastName(const std::string& last_name);
     void setNickName(const std::string& nick_name);
