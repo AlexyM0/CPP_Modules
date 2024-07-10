@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 18:28:05 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/10 03:47:57 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/10 04:28:24 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,7 @@ int main()
 			break;
 		else if(action == "ADD")
 			addContact(phonebook);
+        else if(action == "SEARCH")
+            phonebook.printContact();
 	}
 }

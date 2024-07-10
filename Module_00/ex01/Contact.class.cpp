@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 18:28:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/10 02:33:08 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/10 03:59:40 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,27 @@ Contact::~Contact() {}
 
 void Contact::setFirstName(const std::string& first_name) 
 {
-    _first_name = first_name;
+    this->_first_name = first_name;
 }
 
 void Contact::setLastName(const std::string& last_name) 
 {
-    _last_name = last_name;
+    this->_last_name = last_name;
 }
 
 void Contact::setNickName(const std::string& nick_name) 
 {
-    _nick_name = nick_name;
+   this->_nick_name = nick_name;
 }
 
 void Contact::setPhoneNumber(const std::string& phone_number) 
 {
-    _phone_number = phone_number;
+    this->_phone_number = phone_number;
 }
 
 void Contact::setDarkestSecret(const std::string& darkest_secret) 
 {
-    _darkest_secret = darkest_secret;
+    this->_darkest_secret = darkest_secret;
 }
 
 std::string Contact::getFirstName() const 
