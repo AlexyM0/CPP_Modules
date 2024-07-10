@@ -6,17 +6,14 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 18:28:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/10 03:59:40 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:10:51 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Contact.class.hpp"
 
-Contact::Contact()
-    : _first_name("Default first name"), _last_name("Default last name"),
-      _nick_name("Default nick name"), _phone_number("00000000"), 
-      _darkest_secret("Default darkest secret") {}
+Contact::Contact() {}
 
 Contact::~Contact() {}
 
