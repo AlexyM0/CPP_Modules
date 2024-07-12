@@ -1,6 +1,7 @@
 NAME = file
 
 SOURCES =  	main.cpp\
+			files.cpp\
 			
 OBJECTS = $(SOURCES:.cpp=.o)
 
