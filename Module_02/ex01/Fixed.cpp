@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 04:03:37 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/15 17:22:22 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/15 19:42:45 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ Fixed::Fixed()
 Fixed::Fixed(const int nb)
 {
 	std::cout <<  "Int constructor called" << std::endl;
-	this->_stock_nbr = nb * 256;
+	this->_stock_nbr = nb << _stock_bits;
 	
 }
 
 Fixed::Fixed(const float nb)
 {
 	std::cout <<  "Float constructor called" << std::endl;
-	this->_stock_nbr = roundf(nb * 256);
+	this->_stock_nbr = roundf(nb * (1 << _stock_bits));
 	
 }
 
@@ -43,12 +43,12 @@ std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
 
 float Fixed::toFloat( void ) const
 {
-	return (float)this->getRawBits() / 256;
+	 return static_cast<float>( this->getRawBits() ) / ( 1 << _stock_bits);
 }
 
 int Fixed::toInt(void) const
 {
-	return this->getRawBits() / 256;
+	return this->_stock_nbr >> _stock_bits;
 }
 
 Fixed::Fixed(const Fixed & other)
