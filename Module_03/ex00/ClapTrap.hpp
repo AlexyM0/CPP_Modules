@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 03:20:21 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/16 04:21:53 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:48:02 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ClapTrap
 	
 	public :
 		
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &src);
 		ClapTrap &operator=(ClapTrap const & rhs);
