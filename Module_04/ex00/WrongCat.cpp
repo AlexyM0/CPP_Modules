@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 02:42:07 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 02:42:31 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/18 03:28:50 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongCat::WrongCat()
 	std::cout << "Default WrongCat constructor has been called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const & src)
+WrongCat::WrongCat(WrongAnimal const & src)
 {
     *this = src;
 }
@@ -38,3 +38,4 @@ void WrongCat::makeSound() const
 {
 	std::cout << "Miaouh miaouh" << std::endl;
 }
+
