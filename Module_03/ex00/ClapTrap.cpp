@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 00:29:38 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/16 18:48:29 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:32:53 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	
+	std::cout << "Default ClapTrap constructor has been called" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name) : _name(name),  _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
