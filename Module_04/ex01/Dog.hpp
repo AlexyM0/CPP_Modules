@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:14 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 02:04:46 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:16:42 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
     public:
         Dog();
         Dog(std::string name);
-        Dog(Animal const &src);
+        Dog(Dog const &src);
         Dog &operator=(Dog const &rhs);
         ~Dog();
         

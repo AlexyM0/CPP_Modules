@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:26 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 02:27:37 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 02:59:46 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #pragma once
 
 #include <iostream>
+
 
 class Animal
 {

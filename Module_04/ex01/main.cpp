@@ -6,10 +6,11 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 03:26:14 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 01:48:59 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 02:31:19 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"

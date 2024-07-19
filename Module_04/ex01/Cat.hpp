@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:21 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 01:43:58 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:09:54 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
 
         Cat();
         Cat(std::string name);
-        Cat(Animal const &src);
+        Cat(Cat const &src);
         Cat &operator=(Cat const &rhs);
         ~Cat();
 

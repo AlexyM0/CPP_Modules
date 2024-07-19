@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:24 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 02:06:31 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:15:10 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat::Cat(std::string name)
 	std::cout << "String Cat constructor has been called" << std::endl;
 }
 
-Cat::Cat(Animal const &src)
+Cat::Cat(Cat const &src) : Animal(src)
 {
 	std::cout << "copy Cat constructor has been called" << std::endl;
 	_brain = 0;
