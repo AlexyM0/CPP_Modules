@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:15:05 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/16 18:55:05 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:32:04 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap()
 {
-	
+	std::cout << "Default ScavTrap constructor has been called" << std::endl;
 }
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
@@ -25,8 +25,9 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	std::cout << "Constructor for ScavTrap: " << this->_name << " has been called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ClapTrap const &src)
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)
 {
+	std::cout << "copy ScavTrap constructor has been called" << std::endl;
     *this = src;
 }
 
