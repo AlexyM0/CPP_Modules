@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:14 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 02:29:17 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:23:16 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Dog : public Animal
 {
     public:
         Dog();
-        Dog(Animal const &src);
-        Dog &operator=(Animal const &rhs);
+        Dog(Dog const &src);
+        Dog &operator=(Dog const &rhs);
         ~Dog();
         
         void makeSound(void) const;

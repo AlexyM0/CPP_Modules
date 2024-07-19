@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 03:24:54 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 03:26:05 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:24:33 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ WrongAnimal::WrongAnimal(): _type("WrongAnimal")
 
 WrongAnimal::WrongAnimal(WrongAnimal const & src)
 {
+	std::cout << "copy WrongAnimal constructor has been called" << std::endl;
     *this = src;
 }
 

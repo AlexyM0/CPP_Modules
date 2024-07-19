@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:04:17 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 02:03:37 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:23:20 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ Dog::Dog()
 }
 
 
-Dog::Dog(Animal const &src)
+Dog::Dog(Dog const &src) : Animal(src)
 {
+	std::cout << "copy Dog constructor has been called" << std::endl;
 	*this = src;
 }
 
-Dog &Dog::operator=(Animal const &rhs)
+Dog &Dog::operator=(Dog const &rhs)
 {
 	Animal::operator=(rhs);
 	return *this;
