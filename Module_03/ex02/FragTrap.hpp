@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:18:04 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/17 16:45:31 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:29:12 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : public ClapTrap
 	public :
 		FragTrap();
 		FragTrap(std::string name);
-		FragTrap(ClapTrap const &src);
+		FragTrap(FragTrap const &src);
 		FragTrap &operator=(FragTrap const & rhs);
 		~FragTrap();
 		
