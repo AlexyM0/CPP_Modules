@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 02:42:00 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/18 03:28:59 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:19:56 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat: public WrongAnimal
 {
     public:
         WrongCat();
-        WrongCat(WrongAnimal const & src);
+        WrongCat(WrongCat const & src);
         ~WrongCat();
         
         WrongCat &     operator=(WrongCat const & rhs);
