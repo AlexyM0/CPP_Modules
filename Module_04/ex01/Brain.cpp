@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 15:50:34 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 01:36:28 by almichel         ###   ########.fr       */
+/*   Updated: 2024/07/19 04:20:48 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ Brain::Brain(std::string type)
 
 Brain::Brain(Brain const &src)
 {
+	std::cout << "copy Brain constructor has been called" << std::endl;
 	*this = src;
 }
 
