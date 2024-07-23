@@ -12,7 +12,7 @@ class Bureaucrat
     public:
         Bureaucrat(std::string name, int grade);
         Bureaucrat(Bureaucrat const &src);
-        ~Bureaucrat();
+        virtual ~Bureaucrat();
 
         int getGrade(void)  const;
         void incrementGrade(void);
