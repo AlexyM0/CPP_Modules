@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:15:05 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 04:30:09 by almichel         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:09:45 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,3 @@ void ScavTrap::attack(const std::string &target)
 
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	this->_hitPoints -= amount;
-	if (this->_hitPoints < 0)
-		this->_hitPoints = 0;
-	std::cout << "ScavTrap " << this->_name << " takes " << amount <<  "points of damage!" << std::endl;
-}

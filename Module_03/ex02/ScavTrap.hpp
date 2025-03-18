@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:13:51 by almichel          #+#    #+#             */
-/*   Updated: 2024/07/19 04:30:13 by almichel         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:09:39 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		
 		void guardGate();
 	private:
 };
