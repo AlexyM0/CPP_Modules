@@ -1,5 +1,25 @@
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter()
+{
+
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter const & src)
+{
+    *this = src;
+}
+
+
+ScalarConverter&     ScalarConverter::operator=(ScalarConverter const & rhs)
+{
+	if (this != &rhs)
+	{
+		return *this;
+	}
+	return *this;
+}
+
 ScalarConverter::~ScalarConverter()
 {
 
