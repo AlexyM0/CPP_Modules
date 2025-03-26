@@ -83,3 +83,4 @@ void Span::displayContainer() const
 	for (size_t i = 0; i < _tab.size(); i++)
 		std::cout << _tab[i] << "\n";
 }
+

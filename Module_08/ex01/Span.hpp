@@ -2,6 +2,8 @@
 
 #include "iostream"
 #include <bits/stdc++.h>
+#include <iterator>
+#include <vector>
 
 class Span
 {
@@ -15,6 +17,17 @@ class Span
         int longestSpan();
         size_t getSize() const;
         void displayContainer () const;
+
+        template <typename Iterator>
+        void addNumber2(Iterator begin, Iterator end)
+        {
+            size_t count = std::distance(begin, end);
+            if (getSize() + count > _size)
+                throw TabIsFull();
+
+            _tab.insert(_tab.end(), begin, end);
+        }   
+
         class TabIsFull : public std::exception
 		{
 			public:

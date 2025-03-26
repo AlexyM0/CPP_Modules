@@ -35,4 +35,28 @@ int main()
         std::cerr << e.what() << '\n';
     }
     std::cout << "------------" << std::endl;
+    try
+    {
+        int size = 10;
+        Span span2(size);
+
+        span2.addNumber(0);
+        span2.addNumber(1);
+        span2.addNumber(5);
+
+        std::vector<int> moreNumbers;
+        moreNumbers.push_back(7);
+        moreNumbers.push_back(3);
+        moreNumbers.push_back(8);
+        moreNumbers.push_back(9);
+        moreNumbers.push_back(2);
+
+        span2.addNumber2(moreNumbers.begin(), moreNumbers.end());
+        std::cout << "Added by iterator method : " << std::endl;
+        span2.displayContainer();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
