@@ -31,5 +31,50 @@ int main()
         ++it; 
     }
     std::stack<int> s(mstack);
-    return 0;
+
+    std::cout << std::endl;
+
+
+    // TEST AVEC STD::LIST POUR COMPARER
+    std::list<int> lst;
+
+    lst.push_back(5);
+    lst.push_back(17);
+
+    std::cout << lst.back() << std::endl;
+
+    lst.pop_back();
+
+    std::cout << lst.size() << std::endl;
+
+    lst.push_back(3);
+    lst.push_back(5);
+    lst.push_back(737);
+    //[...]
+    lst.push_back(0);
+
+    std::list<int>::iterator it2 = lst.begin();
+    std::list<int>::iterator ite2 = lst.end();
+
+    ++it2;
+    --it2;
+    std::cout << "----------" << std::endl;
+    while (it2 != ite2) 
+    { 
+        std::cout << *it2 << std::endl;
+        ++it2; 
+    }
+    std::list<int> s2(lst);
+    std::cout << std::endl;
+
+    // TEST ITERATOR INVERSE
+
+    MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+    MutantStack<int>::reverse_iterator rite = mstack.rend();
+    while (rit != rite) 
+    { 
+        std::cout << *rit << std::endl;
+        ++rit; 
+    }
+
 }

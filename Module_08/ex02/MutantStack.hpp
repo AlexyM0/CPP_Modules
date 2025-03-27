@@ -14,15 +14,18 @@ class MutantStack: public std::stack<T>
         ~MutantStack();
 
         typedef typename std::deque<T>::iterator iterator;
+		typedef typename std::deque<T>::const_iterator const_iterator;
+		typedef typename std::deque<T>::reverse_iterator reverse_iterator;
+		typedef typename std::deque<T>::const_reverse_iterator const_reverse_iterator;
 
         typename std::deque<T>::iterator begin();
 		typename std::deque<T>::iterator end();
-		const typename std::deque<T>::iterator cbegin() const;
-		const typename std::deque<T>::iterator cend() const;
-		typename std::deque<T>::iterator rbegin();
-		typename std::deque<T>::iterator rend();
-		const typename std::deque<T>::iterator rcbegin() const;
-		const typename std::deque<T>::iterator rcend() const;
+		const typename std::deque<T>::const_iterator cbegin() const;
+		const typename std::deque<T>::const_iterator cend() const;
+		typename std::deque<T>::reverse_iterator rbegin();
+		typename std::deque<T>::reverse_iterator rend();
+		const typename std::deque<T>::const_reverse_iterator rcbegin() const;
+		const typename std::deque<T>::const_reverse_iterator rcend() const;
 
     private:
 
@@ -68,37 +71,37 @@ typename std::deque<T>::iterator MutantStack<T>::end()
 }
 
 template <typename T>
-const typename std::deque<T>::iterator MutantStack<T>::cbegin() const
+const typename std::deque<T>::const_iterator MutantStack<T>::cbegin() const
 {
 	return this->c.cbegin();
 }
 
 template <typename T>
-const typename std::deque<T>::iterator MutantStack<T>::cend() const
+const typename std::deque<T>::const_iterator MutantStack<T>::cend() const
 {
 	return this->c.cend();
 }
 
 template <typename T>
-typename std::deque<T>::iterator MutantStack<T>::rbegin()
+typename std::deque<T>::reverse_iterator MutantStack<T>::rbegin()
 {
 	return this->c.rbegin();
 }
 
 template <typename T>
-typename std::deque<T>::iterator MutantStack<T>::rend()
+typename std::deque<T>::reverse_iterator MutantStack<T>::rend()
 {
 	return this->c.rend();
 }
 
 template <typename T>
-const typename std::deque<T>::iterator MutantStack<T>::rcbegin() const
+const typename std::deque<T>::const_reverse_iterator MutantStack<T>::rcbegin() const
 {
 	return this->c.crbegin();
 }
 
 template <typename T>
-inline const typename std::deque<T>::iterator MutantStack<T>::rcend() const
+inline const typename std::deque<T>::const_reverse_iterator MutantStack<T>::rcend() const
 {
 	return this->c.crend();
 }

@@ -17,11 +17,12 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << "------------" << std::endl;
     
     try
     {
-        Span sp = Span(5);
+        Span sp = Span(4);
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);
@@ -34,7 +35,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << "------------" << std::endl;
+
     try
     {
         int size = 10;
@@ -54,6 +57,25 @@ int main()
         span2.addNumber2(moreNumbers.begin(), moreNumbers.end());
         std::cout << "Added by iterator method : " << std::endl;
         span2.displayContainer();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    std::cout << "------------" << std::endl;
+
+    try
+    {
+        int size = 10;
+        Span span3(size);
+
+        for (int i = 0; i < 10; i++) {
+            span3.addNumber(i);
+        }
+
+        std::cout << "Added by boucle for method : " << std::endl;
+        span3.displayContainer();
     }
     catch(const std::exception& e)
     {
