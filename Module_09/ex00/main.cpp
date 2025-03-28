@@ -8,8 +8,8 @@ int main(int ac, char **av)
         try
         {
             BitcoinExchange btc(av[1]);
+            btc.storeFile();
             btc.stockInputPath();
-            //btc.stockDataCsv();
         }
         catch(const std::exception& e)
         {
