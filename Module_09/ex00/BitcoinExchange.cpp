@@ -70,8 +70,13 @@ float BitcoinExchange::checkValideNumber(std::string bitcoin_nb)
 void BitcoinExchange::storeFile()
 {
 	std::string line , date, value;
-	std::getline(_file_database, line);
-	while(std::getline(_file_database, line))
+    std::ifstream data(_data_csv.c_str());
+    if (!data.is_open())
+    {
+        throw ErrorData();
+    }
+	std::getline(data, line);
+	while(std::getline(data, line))
 	{
 		std::stringstream ss(line);
 		if(std::getline(ss, date, ',') && std::getline(ss, value, '\n'))
