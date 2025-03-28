@@ -20,10 +20,7 @@ BitcoinExchange &     BitcoinExchange::operator=(BitcoinExchange const & rhs)
 
 BitcoinExchange::~BitcoinExchange()
 {
-    // if(_file.is_open() == true)
-	// 	_file.close();
-	// if(_file_database.is_open() == true)
-	// 	_file_database.close();
+   
 }
 
 void BitcoinExchange::checkValideFormat(std::string line_to_check)
@@ -67,6 +64,7 @@ float BitcoinExchange::checkValideNumber(std::string bitcoin_nb)
 	return (result);
 }   
 
+//Data File
 void BitcoinExchange::storeFile()
 {
 	std::string line , date, value;
@@ -82,6 +80,7 @@ void BitcoinExchange::storeFile()
 		if(std::getline(ss, date, ',') && std::getline(ss, value, '\n'))
 			storeData(date, value);
 	}
+    data.close();
 }
 
 void BitcoinExchange::storeData(std::string str_date, std::string bitcoin_value)
@@ -99,15 +98,21 @@ void BitcoinExchange::storeData(std::string str_date, std::string bitcoin_value)
 time_t BitcoinExchange::checkValideDate(std::string str_date)
 {
 	tm dateInfo = {};
+	std::string day_str   = str_date.substr(8, 2);
+	int day   = std::atoi(day_str.c_str());
+	if (day < 1 || day > 31)
+		throw Error("Error: bad input => " + str_date);
 	if (strptime(str_date.c_str(), "%Y-%m-%d", &dateInfo) == NULL)
        throw Error("Error: bad input => " + str_date);
 	time_t date = mktime(&dateInfo);
 	return (date);
 }
 
+//Input File
 void BitcoinExchange::parseFile(std::string date, std::string bitcoin_nb)
 {
 	time_t valide_date = checkValideDate(date);
+	std::cout << valide_date << std::endl;
 	float valide_bitcoin_nb = checkValideNumber(bitcoin_nb);
 	std::map<time_t, float>::iterator it;
 	it = _data.lower_bound(valide_date);
@@ -118,6 +123,7 @@ void BitcoinExchange::parseFile(std::string date, std::string bitcoin_nb)
 	std::cout << date << "=> " << bitcoin_nb << " = " << it->second * valide_bitcoin_nb << std::endl;
 }
 
+//Input File
 void BitcoinExchange::stockInputPath()
 {
     std::ifstream inputFile(_input_path.c_str());

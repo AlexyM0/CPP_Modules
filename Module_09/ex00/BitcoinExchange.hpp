@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <cstring>
 
+
 class BitcoinExchange
 {
     public:
@@ -51,6 +52,5 @@ class BitcoinExchange
         std::string _data_csv;
         std::ifstream 	_file_database;
 		std::ifstream 	_file_input;
-        //std::map<std::time_t, float> _file;
         std::map<std::time_t, float> _data;
 };
