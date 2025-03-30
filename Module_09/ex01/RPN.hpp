@@ -1,6 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <stdexcept>
+#include <cctype>
 
 class RPN
 {
@@ -10,8 +15,12 @@ class RPN
         RPN(RPN const & src);
         RPN &     operator=(RPN const & rhs);
         ~RPN();
+
         void mainFunc();
         void checkSynthax(std::string av);
+        void calcul(std::string av);
+        bool isNumber(const std::string& s);
+        bool isOperator(const std::string& s);
         class Error: public std::exception
 		{
 			public:
@@ -22,5 +31,6 @@ class RPN
             RPN();
 
             std::string _av;
+            std::stack<int> _stack;
 
 };
