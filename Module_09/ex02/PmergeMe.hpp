@@ -6,6 +6,9 @@
 #include <cstdlib>
 #include <climits>
 #include <vector>
+#include <deque>
+#include <ctime>
+#include <iomanip>
 
 class PmergeMe
 {
@@ -13,11 +16,14 @@ class PmergeMe
     public :
 
         PmergeMe(char **av, int ac);
+        ~PmergeMe();
+
         void mainFunc();
         void checkArgs();
         void insertArgs();
-        ~PmergeMe();
-
+        void printVec();
+        void sortVector(std::vector<int>& vec);
+        
         class Error: public std::exception
 		{
 			public:
@@ -32,5 +38,6 @@ class PmergeMe
 
         char **_av;
         int _ac;
-        std::vector<unsigned int> vec_list;
+        std::vector<int> vec_list;
+        std::deque<int> deque_list;
 };
