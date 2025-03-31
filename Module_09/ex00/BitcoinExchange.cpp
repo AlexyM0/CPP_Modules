@@ -112,7 +112,6 @@ time_t BitcoinExchange::checkValideDate(std::string str_date)
 void BitcoinExchange::parseFile(std::string date, std::string bitcoin_nb)
 {
 	time_t valide_date = checkValideDate(date);
-	std::cout << valide_date << std::endl;
 	float valide_bitcoin_nb = checkValideNumber(bitcoin_nb);
 	std::map<time_t, float>::iterator it;
 	it = _data.lower_bound(valide_date);
