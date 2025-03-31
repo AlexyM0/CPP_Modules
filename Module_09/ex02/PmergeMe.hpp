@@ -16,6 +16,8 @@ class PmergeMe
     public :
 
         PmergeMe(char **av, int ac);
+        PmergeMe(PmergeMe const &src);
+        PmergeMe &operator=(PmergeMe const &src);
         ~PmergeMe();
 
         void mainFunc();
@@ -23,6 +25,7 @@ class PmergeMe
         void insertArgs();
         void printVec();
         void sortVector(std::vector<int>& vec);
+        void sortDeque(std::deque<int>& vec);
         
         class Error: public std::exception
 		{
@@ -33,8 +36,6 @@ class PmergeMe
     private :
 
         PmergeMe();
-        PmergeMe(const PmergeMe &src);
-        PmergeMe &operator=(const PmergeMe &src);
 
         char **_av;
         int _ac;

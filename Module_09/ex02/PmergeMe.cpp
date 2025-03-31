@@ -11,12 +11,12 @@ PmergeMe::PmergeMe(char **av, int ac)
     _ac = ac;
 }
 
-PmergeMe::PmergeMe(const PmergeMe &src)
+PmergeMe::PmergeMe(PmergeMe const &src)
 {
     *this = src;
 }
 
-PmergeMe &PmergeMe::operator=(const PmergeMe &src)
+PmergeMe &PmergeMe::operator=(PmergeMe const &src)
 {
     (void) src;
     return *this;
@@ -40,10 +40,12 @@ void PmergeMe::mainFunc()
         std::cout << std::fixed << std::setprecision(5);
         std::cout << "Time to process a range of " << vec_list.size() << " elements with std::vector : "<< timeVec << " µs" << std::endl;
 
-    //     clock_t startDeq = clock();
-    //     sortDeque();
-    //     clock_t endDeq = clock();
-    //     double timeDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000;
+        clock_t startDeq = clock();
+        sortDeque(deque_list);
+        clock_t endDeq = clock();
+        double timeDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000;
+        std::cout << std::fixed << std::setprecision(5);
+        std::cout << "Time to process a range of " << vec_list.size() << " elements with std::deque : "<< timeDeq << " µs" << std::endl;
      }
     catch(const std::exception& e)
     {
@@ -124,6 +126,44 @@ void PmergeMe::sortVector(std::vector<int>& vec)
         main_chain.insert(it, to_insert);
     }
     vec = main_chain;
+}
+
+void PmergeMe::sortDeque(std::deque<int>& deq_list)
+{
+    if (deq_list.size() <= 1)
+        return;
+
+    std::deque<int> main_chain;
+    std::deque<int> pending;
+
+    for (size_t i = 0; i + 1 < deq_list.size(); i += 2)
+    {
+        int a = deq_list[i];
+        int b = deq_list[i + 1];
+        if (a > b) 
+        {
+            main_chain.push_back(a);
+            pending.push_back(b);
+        }
+        else
+        {
+            main_chain.push_back(b);
+            pending.push_back(a);
+        }
+    }
+
+    if (deq_list.size() % 2 != 0)
+        main_chain.push_back(deq_list.back());
+
+    sortDeque(main_chain);
+
+    for (size_t i = 0; i < pending.size(); ++i)
+    {
+        int to_insert = pending[i];
+        std::deque<int>::iterator it = std::lower_bound(main_chain.begin(), main_chain.end(), to_insert);
+        main_chain.insert(it, to_insert);
+    }
+    deq_list = main_chain;
 }
 
 PmergeMe::~PmergeMe()
