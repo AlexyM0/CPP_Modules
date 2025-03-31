@@ -64,6 +64,8 @@ void PmergeMe::checkArgs()
 				throw Error();
             if (_av[i][0] == '0')
                 throw Error();
+            if (i > 5000)
+                throw Error();
         }
     
 	}
