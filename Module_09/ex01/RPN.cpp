@@ -21,7 +21,11 @@ RPN::RPN(RPN const & src)
 
 RPN &     RPN::operator=(RPN const & rhs)
 {
-    (void) rhs;
+    if(this != &rhs)
+	{
+		this->_av = rhs._av;
+
+	}
 	return *this;
 }
 
